@@ -1,8 +1,8 @@
 # swift闭包，简化代码
 
-​        本人最近学习2020斯坦福 swift 语言教程（在 bilibili或 youtube 搜索 CS193p 即可），Lecture 2 中初步展示了如何用闭包来简化 swift 的代码，使代码看起来更加精炼。这里对课程中出现的代码简化稍作总结：
+本人最近学习2020斯坦福 swift 语言教程（在 bilibili或 youtube 搜索 CS193p 即可），Lecture 2 中初步展示了如何用闭包来简化 swift 的代码，使代码看起来更加精炼。这里对课程中出现的代码简化稍作总结：
 
-​		这是 MVVM 模型中的 model 部分，负责实现卡片的内容。注意到 MemoryGame 的初始化函数需要两个参数，其中一个为整型 numberOfPiarsOfCards，另一个为函数 cardContentFactory（需要一个 Int 型参数，返回 CardContent 型的结果）
+这是 MVVM 模型中的 model 部分，负责实现卡片的内容。注意到 MemoryGame 的初始化函数需要两个参数，其中一个为整型 numberOfPiarsOfCards，另一个为函数 cardContentFactory（需要一个 Int 型参数，返回 CardContent 型的结果）
 
 ```swift
 struct MemoryGame<CardContent> {
@@ -33,7 +33,7 @@ struct MemoryGame<CardContent> {
 }
 ```
 
-​		这是MVVM模型中VM部分的代码块，负责将数据传入 model 部分。EmojiMemoryGame 类中定义了变量 model，类型为 MemoryGame<String>。第一个传入的参数假设为 2，第二个参数为我们自定义的外部函数 createCardContent
+这是MVVM模型中VM部分的代码块，负责将数据传入 model 部分。EmojiMemoryGame 类中定义了变量 model，类型为 MemoryGame<String>。第一个传入的参数假设为 2，第二个参数为我们自定义的外部函数 createCardContent
 
 ```swift
 // 外部函数，第二个参数
@@ -56,7 +56,7 @@ class EmojiMemoryGame {
 }
 ```
 
-​		第二个参数 createCardContent 可以直接写到变量 model 的定义语句中，如下
+第二个参数 createCardContent 可以直接写到变量 model 的定义语句中，如下
 
 ```swift
 class EmojiMemoryGame {
@@ -78,7 +78,7 @@ class EmojiMemoryGame {
 }
 ```
 
-​		因为作为第二个参数的函数只有一个返回语句，所以 return 可以省略。而且最后一个参数可以不写参数名，可以直接用 {} 调用语句，修改后如下
+因为作为第二个参数的函数只有一个返回语句，所以 return 可以省略。而且最后一个参数可以不写参数名，可以直接用 {} 调用语句，修改后如下
 
 ```swift
 private var model: MemoryGame<String> =
@@ -87,11 +87,11 @@ private var model: MemoryGame<String> =
         }
 ```
 
-​		由于第二个参数函数的传入类型 Int 和返回值类型 String 可以从 MemoryGame 推测出来，因此可以进一步省略，修改如下
+由于第二个参数函数的传入类型 Int 和返回值类型 String 可以从 MemoryGame 推测出来，因此可以进一步省略，修改如下
 
 ```swift
 private var model: MemoryGame<String> =
         MemoryGame<String>(numberOfPiarsOfCards: 2) { pairIndex in "👻"}
 ```
 
-​		到这里代码已经足够精简了。如果参数函数没有用到 pairIndex，甚至可以进一步将 “pairIndex” 改成 “_”
+到这里代码已经足够精简了。如果参数函数没有用到 pairIndex，甚至可以进一步将 “pairIndex” 改成 “_”
