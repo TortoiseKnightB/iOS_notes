@@ -2,7 +2,7 @@
 
 &ensp;&ensp;&ensp;&ensp;**MVVM**（Model–View–ViewModel）是一种软件架构模式，本质上是 MVC 的改进版。MVVM 确定了代码在应用程序中的位置，与应用程序中需要实时反馈的用户界面对应。它将用户界面与后端逻辑分开，抽象出 Model, View, ViewModel 3 个部分，有助于分离界面与后端逻辑的开发。这里结合斯坦福的 Swift 课程，用一个简单的 app 例子来对 MVVM 做一个简单的介绍
 
-<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/app.png" alt="app 展示图" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/app.png" alt="app 展示图" style="zoom:25%;" />
 
 &ensp;&ensp;&ensp;&ensp;如图，该 app 展示了一组卡片。当点击卡片时，对应卡片翻转。
 
@@ -22,7 +22,7 @@
 4. ViewModel 广播该改变。（ViewModel 并不直接告诉 View 发生了什么改变，只是广播有改变发生了。负责监视这一改变的 View 会收到广播，然后重新从 ViewModel 提取数据，并重绘自己，完成相应的改变）
 5. View 观察到改变，重新获取数据，重绘自己完成改变
 
-<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/model_view.png" alt="截屏2021-01-30 下午8.05.54" style="zoom: 30%;" />
+<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/model_view.png" alt="截屏2021-01-30 下午8.05.54" style="zoom: 20%;" />
 
 &ensp;&ensp;&ensp;&ensp;**View => Model：**（当用户点击卡片时）
 
@@ -32,7 +32,7 @@
 
 &ensp;&ensp;&ensp;&ensp;注意，当因为用户操作导致 Model 发生改变后，又会进行上诉的 Model => View 的过程（获取更改后的卡片数据，并重新绘制界面）
 
-<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/v_m.png" alt="截屏2021-01-30 下午8.12.52" style="zoom:30%;" />
+<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/v_m.png" alt="截屏2021-01-30 下午8.12.52" style="zoom:15%;" />
 
 &ensp;&ensp;&ensp;&ensp;下面在具体的代码中介绍如何实现简单的  MVVM 模型（所有代码均来自斯坦福 Swift 课程）
 
