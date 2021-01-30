@@ -2,7 +2,11 @@
 
 &ensp;&ensp;&ensp;&ensp;**MVVM**（Model–View–ViewModel）是一种软件架构模式，本质上是 MVC 的改进版。MVVM 确定了代码在应用程序中的位置，与应用程序中需要实时反馈的用户界面对应。它将用户界面与后端逻辑分开，抽象出 Model, View, ViewModel 3 个部分，有助于分离界面与后端逻辑的开发。这里结合斯坦福的 Swift 课程，用一个简单的 app 例子来对 MVVM 做一个简单的介绍
 
-<img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/app.png" alt="app 展示图" width="500" align=center />
+<center class="half">
+    <img src="https://raw.githubusercontent.com/TortoiseKnightB/ios-LearningNotes/main/images/app.png" width="500"/>
+</center>
+
+
 
 &ensp;&ensp;&ensp;&ensp;如图，该 app 展示了一组卡片。当点击卡片时，对应卡片翻转。
 
